@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Add a background image to the entire page */
+body {
+  background-image: url('https://www.transparenttextures.com/patterns/white-wall.png');
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.currency-converter {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  transition: transform 0.3s ease-in-out;
+}
+
+.currency-converter:hover {
+  transform: scale(1.02);
+}
+
+.currency-converter h2 {
+  text-align: center;
+  color: #333333;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.input-group input,
+.input-group select {
+  width: 48%;
+  padding: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+.to-text {
+  text-align: center;
+  margin: 15px 0;
+  color: #666666;
+  font-size: 20px;
+}
+
+h3 {
+  text-align: center;
+  color: #007bff;
+  margin-top: 25px;
+  font-size: 24px;
+  font-weight: bold;
+}
