@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import './CurrencyConverter.css'; // Import the new CSS file
+import './CurrencyConverter.css';
 
 const CurrencyConverter = () => {
   // Initialize state and fetch exchange rates
@@ -8,20 +8,23 @@ const CurrencyConverter = () => {
   const [toCurrency, setToCurrency] = useState("EUR");
   const [exchangeRate, setExchangeRate] = useState(1);
   const [currencies, setCurrencies] = useState([]);
-
+  //api for info on currency rates  
   useEffect(() => {
     fetch("https://api.exchangerate-api.com/v4/latest/USD")
       .then((response) => response.json())
       .then((data) => {
+        console.log("fetch valuta",data);
         setCurrencies(Object.keys(data.rates));
-        setExchangeRate(data.rates[toCurrency]);
       });
-  }, [toCurrency]);
-
+  }, []);
+//api for info on currency rates
   useEffect(() => {
     fetch(`https://api.exchangerate-api.com/v4/latest/${fromCurrency}`)
       .then((response) => response.json())
-      .then((data) => setExchangeRate(data.rates[toCurrency]));
+      .then((data) => {
+        setExchangeRate(data.rates[toCurrency])
+        console.log(`use effect ${fromCurrency}` ,data.rates, toCurrency);
+      });
   }, [fromCurrency, toCurrency]);
 
   const convert = () => (amount * exchangeRate).toFixed(2);
